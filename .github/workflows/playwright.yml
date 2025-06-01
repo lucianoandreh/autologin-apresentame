@@ -2,7 +2,7 @@ name: AutoLogin com Playwright a cada 10 minutos
 
 on:
   schedule:
-    - cron: '0,15,30,45 * * * *'  # A cada 10 minutos
+    - cron: '0,20,40 * * * *'  # A cada 10 minutos
   workflow_dispatch:
 
 jobs:
