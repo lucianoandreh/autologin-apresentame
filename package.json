@@ -1,0 +1,12 @@
+{
+  "name": "autologin",
+  "version": "1.0.0",
+  "description": "Automação de login e confirmação de lead",
+  "main": "autoLogin.js",
+  "scripts": {
+    "start": "node autoLogin.js"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0"
+  }
+}
