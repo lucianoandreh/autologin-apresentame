@@ -27,19 +27,19 @@ async function autoLogin() {
     console.log('Clicando em login...');
     await page.click('button[data-action="submit"]');
 
-    await delay(5000);
+    await delay(2000);
 
     console.log('Clicando na primeira notificação...');
     await page.waitForSelector('a[title="Abrir mais detalhes desta notificação"]', { timeout: 10000 });
     await page.click('a[title="Abrir mais detalhes desta notificação"]');
 
-    await delay(5000);
+    await delay(2000);
 
     console.log('Confirmando o lead...');
     await page.waitForSelector('button.swal2-confirm.btn.btn-success.swal2-styled', { timeout: 10000 });
     await page.click('button.swal2-confirm.btn.btn-success.swal2-styled');
 
-    await delay(5000);
+    await delay(2000);
 
     console.log('Script finalizado com sucesso.');
 
