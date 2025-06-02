@@ -1,0 +1,31 @@
+name: AutoLogin com Playwright a cada 10 minutos
+
+on:
+  schedule:
+    - cron: '1,10,20,30,40,50 * * * *'  # A cada 10 minutos 
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    env:
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Instalar dependências
+      run: |
+        npm install
+        npx playwright install --with-deps
+
+    - name: Executar o script
+      run: node autoLogin.js
